@@ -17,7 +17,6 @@ metadata:
   # these labels are deployment related labels
   labels:
     component: backend
-
     project: expense
     tier: app
 spec:
@@ -25,7 +24,6 @@ spec:
   selector:
     matchLabels:
       component: backend
-  
       project: expense
       tier: app
   # pod definition
@@ -33,7 +31,6 @@ spec:
     metadata:
       labels:
         component: backend
-    
         project: expense
         tier: app
     spec:
@@ -43,8 +40,6 @@ spec:
         envFrom:
         - configMapRef:
             name: backend
-
-
 ---
 apiVersion: v1
 kind: Service
@@ -54,7 +49,6 @@ metadata:
 spec:
   selector:
     component: backend
-
     project: expense
     tier: app
   ports:
