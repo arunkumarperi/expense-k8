@@ -121,11 +121,7 @@ spec:
       - name: frontend
         image: joindevops/frontend:v1.0
         
-        volumeMounts:
-        - name: nginx-conf
-          mountPath: /etc/nginx/nginx.conf
-          subPath: nginx.conf
-          readOnly: true  
+        
         # envFrom:
         # - configMapRef:
         #     name: frontend
@@ -144,7 +140,7 @@ metadata:
   name: frontend
   namespace: expense
 spec:
-  #type: LoadBalancer
+  type: LoadBalancer
   selector:
     component: frontend
     project: expense
